@@ -82,8 +82,7 @@ def gen_PROMISE():
 
     common_metric = set(setting.PROMISE_METRIC)
     for (dirpath, dirnames, filenames) in os.walk(path):
-        fnames = filter_arff(filenames)
-        for f in fnames:
+        for f in filenames:
             df = pd.read_csv(os.path.join(dirpath, f))
             if common_metric.issubset(set(df.columns)):
                 df = df[setting.PROMISE_METRIC]

@@ -7,7 +7,7 @@ ARFF_BASE_PATH = ['..', 'data']
 REPORT_PATH = ['..', 'report']
 OUTPUT_PREFIX = None
 
-DATASET = ['NASA']#, 'NASA', 'PROMISE']
+DATASET = ['PROMISE']
 MODELS = [*m]
 
 ARFF_TYPE_MAP = {'int64': 'NUMERIC', 'float64': 'NUMERIC', 'object': 'STRING'}
