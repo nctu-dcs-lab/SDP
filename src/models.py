@@ -170,7 +170,10 @@ def sc_cc(data):
     nr, nc = data.shape
     xvec = robjects.FloatVector(data.values.transpose().reshape(data.size))
     xr = robjects.r.matrix(xvec, nrow=nr, ncol=nc)
-    res = robjects.globalenv['sc2'](xr)
+    try:
+        res = robjects.globalenv['sc2'](xr)
+    except Exception as e:
+        return None
     if res:
         return pd.DataFrame(np.array(res))
     else:
@@ -180,7 +183,10 @@ def sc_origin(data):
     nr, nc = data.shape
     xvec = robjects.FloatVector(data.values.transpose().reshape(data.size))
     xr = robjects.r.matrix(xvec, nrow=nr, ncol=nc)
-    res = robjects.globalenv['sc1'](xr)
+    try:
+        res = robjects.globalenv['sc1'](xr)
+    except Exception as e:
+        return None
     if res:
         return pd.DataFrame(np.array(res))
     else:
