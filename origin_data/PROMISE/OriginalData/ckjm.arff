@@ -1,0 +1,35 @@
+@relation ckjm-weka.filters.unsupervised.attribute.NumericToNominal-Rlast
+
+@attribute wmc numeric
+@attribute dit numeric
+@attribute noc numeric
+@attribute cbo numeric
+@attribute rfc numeric
+@attribute lcom numeric
+@attribute ca numeric
+@attribute ce numeric
+@attribute npm numeric
+@attribute lcom3 numeric
+@attribute loc numeric
+@attribute dam numeric
+@attribute moa numeric
+@attribute mfa numeric
+@attribute cam numeric
+@attribute ic numeric
+@attribute cbm numeric
+@attribute amc numeric
+@attribute max_cc numeric
+@attribute avg_cc numeric
+@attribute Defective {N,Y}
+
+@data
+3,1,0,1,21,0,0,1,2,0,74,1,0,0,0.555556,0,0,23.333333,2,1.3333,N
+3,1,0,4,18,0,2,3,2,0,66,1,0,0,0.555556,0,0,20.666667,3,1.6667,N
+23,1,0,7,32,183,7,0,22,0.890909,205,1,0,0,0.405797,0,0,7.478261,6,1.1739,Y
+13,2,0,14,72,34,2,14,9,0.604167,419,0.875,2,0.727273,0.240385,0,0,30.615385,5,2.2308,Y
+4,1,0,3,19,0,1,2,4,0,97,1,0,0,0.4375,0,0,23,1,0.75,Y
+2,1,0,4,8,0,2,2,2,0,24,1,0,0,0.625,0,0,10.5,1,0.5,N
+11,2,0,21,40,0,1,21,8,0.55,209,1,2,0.947368,0.173554,0,0,17.636364,5,1.9091,N
+5,4,0,7,28,0,0,7,5,0.666667,156,1,0,0.95122,0.533333,2,2,29.6,1,0.8,Y
+1,1,0,6,1,0,5,1,1,2,1,0,0,0,1,0,0,0,1,1,N
+7,1,0,7,30,11,3,6,5,0.666667,218,1,0,0,0.2,0,0,29.857143,7,2.1429,Y

@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.vscode
+_DS_Store
+*.Rproj
+_Rhistory
+
+ignore/
+__pycache__/
+__MACOSX/
+

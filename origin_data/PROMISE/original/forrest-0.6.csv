@@ -1,0 +1,8 @@
+Project,Version,Class,wmc,dit,noc,cbo,rfc,lcom,ca,ce,npm,lcom3,loc,dam,moa,mfa,cam,ic,cbm,amc,nr,ndc,nml,isOld,ndpv,ner,max(cc),avg(cc),bugs
+forrest,0.6,org.apache.forrest.conf.ForrestConfUtils,7,1,,4,16,21,2,2,5,1.1666666,107,0.75,0,0.0,0.23809524,0,0,13.714285999999998,,,,,,,5,1.4285715,0
+forrest,0.6,org.apache.forrest.conf.AntPropertiesModule,5,4,,12,20,6,0,12,3,0.5,88,1.0,0,0.7894737,0.4,1,1,16.2,,,,,,,1,0.8,0
+forrest,0.6,org.apache.forrest.conf.SkinconfTransformer,3,5,,5,24,3,0,5,3,2.0,276,0.0,0,0.93333334,0.5,1,1,91.0,,,,,,,1,0.6666667,0
+forrest,0.6,org.apache.forrest.conf.AntProperties$STATE,4,1,,1,5,0,1,1,0,1.0555556000000001,48,0.33333334,1,0.0,0.5,0,0,9.5,,,,,,,2,1.5,0
+forrest,0.6,org.apache.forrest.log.ForrestLogTargetFactory,2,5,,6,12,1,0,6,2,2.0,43,0.0,0,0.93333334,0.75,1,1,20.5,,,,,,,1,0.5,1
+forrest,0.6,org.apache.forrest.conf.AntProperties,7,4,,5,44,21,4,2,7,2.0,219,0.0,0,0.9,0.30952382,2,6,30.285715000000003,,,,,,,5,1.7142857,0
+forrest,0.6,org.apache.forrest.conf.ForrestConfModule,10,3,,17,42,37,0,17,5,0.9259259,340,1.0,1,0.5,0.36666667,1,1,32.4,,,,,,,3,1.2,0

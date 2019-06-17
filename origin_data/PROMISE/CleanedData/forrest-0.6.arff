@@ -1,0 +1,31 @@
+@relation forrest-0.6-weka.filters.unsupervised.attribute.NumericToNominal-Rlast
+
+@attribute wmc numeric
+@attribute dit numeric
+@attribute noc numeric
+@attribute cbo numeric
+@attribute rfc numeric
+@attribute lcom numeric
+@attribute ca numeric
+@attribute ce numeric
+@attribute npm numeric
+@attribute lcom3 numeric
+@attribute loc numeric
+@attribute dam numeric
+@attribute moa numeric
+@attribute mfa numeric
+@attribute cam numeric
+@attribute ic numeric
+@attribute cbm numeric
+@attribute amc numeric
+@attribute max_cc numeric
+@attribute avg_cc numeric
+@attribute Defective {N,Y}
+
+@data
+3,5,0,5,24,3,0,5,3,2,276,0,0,0.933333,0.5,1,1,91,1,0.6667,N
+2,5,0,6,12,1,0,6,2,2,43,0,0,0.933333,0.75,1,1,20.5,1,0.5,Y
+10,3,0,17,42,37,0,17,5,0.925926,340,1,1,0.5,0.366667,1,1,32.4,3,1.2,N
+7,1,0,4,16,21,2,2,5,1.166667,107,0.75,0,0,0.238095,0,0,13.714286,5,1.4286,N
+7,4,0,5,44,21,4,2,7,2,219,0,0,0.9,0.309524,2,6,30.285714,5,1.7143,N
+5,4,0,12,20,6,0,12,3,0.5,88,1,0,0.789474,0.4,1,1,16.2,1,0.8,N
