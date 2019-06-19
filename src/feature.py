@@ -1,3 +1,4 @@
+from warnings import warn
 import numpy as np
 from common import *
 
@@ -9,7 +10,7 @@ def drop_useless_feature(x, f):
     x = x.drop(x.columns[useless_feature], axis=1)
     diff = list(origin - set(x.columns))
     if diff:
-        warning("{} informationless features dropping in {}: {}\n\t Please make sure this is expected".format(len(diff), f, ', '.join(diff)))
+        warn("{} informationless features dropping in {}: {}\n\t Please make sure this is expected".format(len(diff), f, ', '.join(diff)))
     return x
 
 def get_feature_cc(feature, y):
