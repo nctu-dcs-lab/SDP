@@ -37,7 +37,7 @@ def Newman_with_corrcoef(data):
     try:
         cluster = graph.community_leading_eigenvector(clusters = 2)
     except Exception as e:
-        warn(e)
+        warn(str(e))
         return None
     if len(cluster) != 2:
         return None
@@ -62,7 +62,7 @@ def Newman_with_dot(data):
     try:
         cluster = graph.community_leading_eigenvector(clusters = 2)
     except Exception as e:
-        warn(e)
+        warn(str(e))
         return None
     if len(cluster) != 2:
         return None
@@ -87,7 +87,7 @@ def Asyn_fluidc_with_corrcoef(data):
     try:
         cluster = list(community.asyn_fluidc(graph, 2, max_iter=1000))
     except Exception as e:
-        warn(e)
+        warn(str(e))
         return None
 
     if len(cluster) != 2:
@@ -113,7 +113,7 @@ def Asyn_fluidc_with_dot(data):
     try:
         cluster = list(community.asyn_fluidc(graph, 2, max_iter=1000))
     except Exception as e:
-        warn(e)
+        warn(str(e))
         return None
     if len(cluster) != 2:
         return None
@@ -138,7 +138,7 @@ def Modularity_with_corrcoef(data):
     try:
         cluster = list(community.greedy_modularity_communities(graph))
     except Exception as e:
-        warn(e)
+        warn(str(e))
         return None
 
     if len(cluster) != 2:
@@ -164,7 +164,7 @@ def Modularity_with_dot(data):
     try:
         cluster = list(community.greedy_modularity_communities(graph))
     except Exception as e:
-        warn(e)
+        warn(str(e))
         return None
 
     if len(cluster) != 2:
@@ -187,7 +187,7 @@ def sc_cc(data):
     try:
         res = robjects.globalenv['sc2'](xr)
     except Exception as e:
-        warn(e)
+        warn(str(e))
         return None
     if res:
         return pd.DataFrame(np.array(res))
@@ -201,7 +201,7 @@ def sc_origin(data):
     try:
         res = robjects.globalenv['sc1'](xr)
     except Exception as e:
-        warn(e)
+        warn(str(e))
         return None
     if res:
         return pd.DataFrame(np.array(res))
