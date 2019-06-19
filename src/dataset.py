@@ -4,6 +4,7 @@ import os
 import arff
 import setting
 import sys
+from warnings import warn
 from common import *
 
 
@@ -134,7 +135,7 @@ def consistency_check(dataset):
                 elif len(n) != len(data[1].names()):
                     raise InconsistentError("Dataset {}: {} and {} have different number of metrics".format(dataset, pf, f))
                 else:
-                    warning("Dataset {}: {} and {} may have inconsistent metrics due to different metrics name or type".format(dataset, pf, f))
+                    warn("Dataset {}: {} and {} may have inconsistent metrics due to different metrics name or type".format(dataset, pf, f))
             else:
                 n = data[1].names()
                 t = data[1].types()
