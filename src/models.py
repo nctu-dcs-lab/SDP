@@ -10,7 +10,7 @@ import numpy as np
 from networkx.algorithms import community
 from networkx.convert_matrix import from_numpy_array
 import rpy2.robjects as robjects
-from rpy2.robjects.packages import importr
+from warnings import warn
 
 
 def get_defective_cluster(feature, group):
@@ -34,7 +34,11 @@ def Newman_with_corrcoef(data):
     matrix[matrix < 0 ] = 0
 
     graph = igraph.Graph.Adjacency(matrix.tolist(), mode=igraph.ADJ_UNDIRECTED)
-    cluster = graph.community_leading_eigenvector(clusters = 2)
+    try:
+        cluster = graph.community_leading_eigenvector(clusters = 2)
+    except Exception as e:
+        warn(e)
+        return None
     if len(cluster) != 2:
         return None
 
@@ -55,7 +59,11 @@ def Newman_with_dot(data):
     matrix[matrix < 0 ] = 0
 
     graph = igraph.Graph.Adjacency(matrix.values.tolist(), mode=igraph.ADJ_UNDIRECTED)
-    cluster = graph.community_leading_eigenvector(clusters = 2)
+    try:
+        cluster = graph.community_leading_eigenvector(clusters = 2)
+    except Exception as e:
+        warn(e)
+        return None
     if len(cluster) != 2:
         return None
 
@@ -76,7 +84,12 @@ def Asyn_fluidc_with_corrcoef(data):
     matrix[matrix < 0 ] = 0
 
     graph = from_numpy_array(matrix)
-    cluster = list(community.asyn_fluidc(graph, 2, max_iter=1000))
+    try:
+        cluster = list(community.asyn_fluidc(graph, 2, max_iter=1000))
+    except Exception as e:
+        warn(e)
+        return None
+
     if len(cluster) != 2:
         return None
 
@@ -100,6 +113,7 @@ def Asyn_fluidc_with_dot(data):
     try:
         cluster = list(community.asyn_fluidc(graph, 2, max_iter=1000))
     except Exception as e:
+        warn(e)
         return None
     if len(cluster) != 2:
         return None
@@ -124,7 +138,7 @@ def Modularity_with_corrcoef(data):
     try:
         cluster = list(community.greedy_modularity_communities(graph))
     except Exception as e:
-        print(e)
+        warn(e)
         return None
 
     if len(cluster) != 2:
@@ -150,7 +164,7 @@ def Modularity_with_dot(data):
     try:
         cluster = list(community.greedy_modularity_communities(graph))
     except Exception as e:
-        print(e)
+        warn(e)
         return None
 
     if len(cluster) != 2:
@@ -173,6 +187,7 @@ def sc_cc(data):
     try:
         res = robjects.globalenv['sc2'](xr)
     except Exception as e:
+        warn(e)
         return None
     if res:
         return pd.DataFrame(np.array(res))
@@ -186,6 +201,7 @@ def sc_origin(data):
     try:
         res = robjects.globalenv['sc1'](xr)
     except Exception as e:
+        warn(e)
         return None
     if res:
         return pd.DataFrame(np.array(res))
