@@ -7,8 +7,8 @@ ARFF_BASE_PATH = ['..', 'data']
 REPORT_PATH = ['..', 'report']
 OUTPUT_PREFIX = None
 
-DATASET = ['PROMISE']
-MODELS = [*m]
+DATASET = ['AEEEM', 'NASA', 'PROMISE']
+MODELS = [*m, *m_cc]
 
 ARFF_TYPE_MAP = {'int64': 'NUMERIC', 'float64': 'NUMERIC', 'object': 'STRING'}
 
@@ -17,7 +17,7 @@ PARALLEL_BACKEND = 'threading'
 ## -1 use all thread
 PARALLEL_NUMBER_THREAD = {
     'AEEEM': -1,
-    'NASA': 1,
+    'NASA': -1,
     'PROMISE': -1
 }
 
@@ -25,9 +25,9 @@ PARALLEL_NUMBER_THREAD = {
 AEEEM_PROJECT = ['eclipse', 'equinox', 'lucene', 'mylyn', 'pde']
 AEEEM_FILE = ['bug-metrics.csv', 'change-metrics.csv', 'complexity-code-change.csv', 'single-version-ck-oo.csv']
 ## 5 type: ['churn.csv', 'exp-churn.csv', 'lin-churn.csv', 'log-churn.csv', 'weighted-churn.csv']
-AEEEM_CHURN_FILE = ['lin-churn.csv']
+AEEEM_CHURN_FILE = ['weighted-churn.csv']
 ## 5 type: ['ent.csv', 'exp-ent.csv', 'lin-ent.csv', 'log-ent.csv', 'weighted-ent.csv']
-AEEEM_ENTROPY_FILE = ['weighted-ent.csv']
+AEEEM_ENTROPY_FILE = ['lin-ent.csv']
 
 # For NASA
 NASA_SUBPATH = ['figshare', 'D\'\'']
@@ -75,5 +75,6 @@ PROMISE_METRIC = [
     'amc',
     'max_cc',
     'avg_cc',
+    'ce',
     'bug'
 ]
