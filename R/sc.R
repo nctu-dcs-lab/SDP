@@ -21,11 +21,8 @@ sc1 <- function(A) {
   defect_proneness = (v1 >0)
   # Label the defective and clean clusters.
   rs = rowSums(normA)
-  if(length(rs[v1 > 0]) == 0 || length(rs[v1 < 0]) == 0) {
-    defect_proneness = NULL
-  } else if(mean(rs[v1 >0]) < mean(rs[v1 <0])) {
-      defect_proneness = (v1 < 0)
-  }
+  if(mean(rs[v1 >0])<mean(rs[v1 <0]))
+    defect_proneness = (v1 <0)
   # Return the defect proneness.
   defect_proneness
 }
@@ -52,11 +49,8 @@ sc2 <- function(A) {
   defect_proneness = (v1 >0)
   # Label the defective and clean clusters.
   rs = rowSums(normA)
-  if(length(rs[v1 > 0]) == 0 || length(rs[v1 < 0]) == 0) {
-    defect_proneness = NULL
-  } else if(mean(rs[v1 >0]) < mean(rs[v1 <0])) {
+  if(mean(rs[v1 >0]) < mean(rs[v1 <0]))
     defect_proneness = (v1 < 0)
-  }
   # Return the defect proneness.
   defect_proneness
 }
