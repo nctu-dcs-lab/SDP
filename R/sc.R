@@ -59,7 +59,7 @@ sc3 <- function(A) {
   # Normalize software metrics.
   # normA = apply(A, 2, function(x){(x-mean(x))/sd(x)})
   # Construct the weighted adjacency matrix W.
-  W = cor(t(normA))
+  W = cor(t(A))
   W = W^2
   # Set all negative values to zero.
   # W[W<0] = 0
@@ -77,7 +77,7 @@ sc3 <- function(A) {
   # Divide the data set into two clusters.
   defect_proneness = (v1 >0)
   # Label the defective and clean clusters.
-  rs = rowSums(normA)
+  rs = rowSums(A)
   if(mean(rs[v1 >0]) < mean(rs[v1 <0]))
     defect_proneness = (v1 < 0)
   # Return the defect proneness.
