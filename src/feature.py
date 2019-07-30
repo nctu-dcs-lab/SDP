@@ -1,6 +1,8 @@
 from warnings import warn
 import numpy as np
 from common import *
+from sklearn.decomposition import *
+import pandas as pd
 
 
 def drop_useless_feature(x, f):
@@ -27,8 +29,21 @@ def abs_cc_above_median_cc(x, y):
     cc = get_feature_cc(x, y)
     return x.iloc[:,np.where(np.absolute(cc) > np.median(cc))[0]]
 
+def pca_NMF(x, y):
+    nmf = NMF()
+    nmf.fit(x)
+    return pd.DataFrame(nmf.transform(x))
+
+def pca_KPCA(x, y):
+    kpca = KernelPCA()
+    kpca.fit(x)
+    return pd.DataFrame(kpca.transform(x))
+
+
 feature_selection_method = [
     all_feature,
     abs_cc_above_mean_cc,
-    abs_cc_above_median_cc
+    abs_cc_above_median_cc,
+    pca_NMF,
+    pca_KPCA
 ]

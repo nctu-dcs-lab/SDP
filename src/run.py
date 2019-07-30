@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np
 from joblib import Parallel, delayed
 from scipy.io import arff
 from sklearn.metrics import roc_auc_score
@@ -22,6 +23,9 @@ def compare_models(ds, f, filter, pBar):
 
     x = feature.drop_useless_feature(x, f)
     x = filter(x, y)
+    # May contain all zero column when using KPCA and NMF
+    useless_feature = np.where(x.nunique().values == 1)[0].tolist()
+    x = x.drop(x.columns[useless_feature], axis=1)
 
     for M in setting.MODELS:
         pred = M(x)
