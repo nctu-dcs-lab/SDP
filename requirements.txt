@@ -6,7 +6,7 @@ language-selector==0.1
 liac-arff==2.4.0
 memory-profiler==0.55.0
 networkx==2.3
-numpy==1.16.3
+numpy==1.22.0
 pandas==0.24.2
 powerline-status==2.7
 psutil==5.6.2
