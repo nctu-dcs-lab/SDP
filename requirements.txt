@@ -1,7 +1,7 @@
 chardet==2.3.0
 command-not-found==0.3
 decorator==4.4.0
-joblib==0.13.2
+joblib==1.2.0
 language-selector==0.1
 liac-arff==2.4.0
 memory-profiler==0.55.0
